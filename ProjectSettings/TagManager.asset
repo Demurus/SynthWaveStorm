@@ -9,6 +9,16 @@ TagManager:
   - TAZOFX
   - blueBrick
   - purpleBrick
+  - Paddle
+  - BallSpeedUp
+  - BallSpeedDown
+  - PaddleGrow
+  - PaddleShrink
+  - SuperBall
+  - BackGroundMusic
+  - blueStrongBrick
+  - purpleStrongBrick
+  - armoredBrick
   layers:
   - Default
   - TransparentFX

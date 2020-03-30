@@ -8,6 +8,7 @@ public class SettingsWindow : MonoBehaviour
 {
     [SerializeField] private Button _okButton;
     [SerializeField] private Toggle _musicToggle;
+    private NonDestroyable _music;
 
     public event Action OnOKButtonClickEvent;
     public event Action OnMusicToggleValueChangeEvent;
@@ -16,6 +17,7 @@ public class SettingsWindow : MonoBehaviour
     private void Awake()
     {
         _okButton.onClick.AddListener(OnOkButtonClick);
+        _music = FindObjectOfType<NonDestroyable>();
      }
     public void MusicIsOn(bool isPlaying)
     {
@@ -41,11 +43,13 @@ public class SettingsWindow : MonoBehaviour
 
     public void MusicSwitchOn()
     {
+        _music.UnmuteMusic();
        Debug.Log("Music is on");
     }
 
     public void MusicSwitchOff()
     {
+        _music.MuteMusic();
       Debug.Log("Music is off");
     }
 

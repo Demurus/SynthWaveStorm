@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -8,12 +9,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private SettingsWindow _settingsWindow;
     [SerializeField] private ShopWindow _shopWindow;
 
-    //private void SettingsWindowMusicToggleValueChangeEvent()
-    //{
-    //    _settingsWindow.MusicSwitchOn();
-    //}
 
 
+    private void ShopWindowOnOkButtonClickEvent()
+    {
+        _shopWindow.Hide();
+    }
     private void SettingsWindowOnOkButtonClickEvent()
     {
         _settingsWindow.Hide();
@@ -26,6 +27,14 @@ public class UIController : MonoBehaviour
     private void MainMenuWindowOnPlayButtonClickEvent()
     {
         _mainMenuWindow.Hide();
+        SceneManager.LoadScene("Level_01");
+    }
+    private void MainMenuWindowOnShopButtonClickEvent()
+    {
+        
+        _shopWindow.Show();
+        
+       
     }
 
     private void MainMenuWindowOnSettingsButtonClickEvent()
@@ -34,11 +43,14 @@ public class UIController : MonoBehaviour
     }
     private void Awake()
     {
+        
         _mainMenuWindow.OnPlayButtonClickEvent += MainMenuWindowOnPlayButtonClickEvent;
         _mainMenuWindow.OnQuitButtonClickEvent += MainMenuWindowOnQuitButtonClickEvent;
         _settingsWindow.OnOKButtonClickEvent += SettingsWindowOnOkButtonClickEvent;
         _mainMenuWindow.OnSettingsButtonClickEvent += MainMenuWindowOnSettingsButtonClickEvent;
-        //_settingsWindow.OnMusicToggleValueChangeEvent += SettingsWindowMusicToggleValueChangeEvent;
+        _mainMenuWindow.OnShopButtonClickEvent += MainMenuWindowOnShopButtonClickEvent;
+        _shopWindow.OnOkButtonClickEvent += ShopWindowOnOkButtonClickEvent;
+        
     }
     void Start()
     {

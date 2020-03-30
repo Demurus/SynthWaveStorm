@@ -6,6 +6,7 @@ public class LivesBar : MonoBehaviour
 {
     private Transform[] hearts = new Transform[3];
     private GameManager _gameManager;
+    private DepenciesManager _depenciesManager;
     void Start()
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -15,7 +16,8 @@ public class LivesBar : MonoBehaviour
     }
     private void Awake()
     {
-        _gameManager = FindObjectOfType<GameManager>();
+        _depenciesManager = FindObjectOfType<DepenciesManager>();
+        _gameManager = _depenciesManager.gameManager;
     }
    public void Refresh()
     {

@@ -6,20 +6,27 @@ using UnityEngine.UI;
 public class ScoreBar : MonoBehaviour
 {
     private GameManager _gameManager;
-    private Ball _ball;
-
+    private DepenciesManager _depenciesManager;
+    
     public Text _scoreText;
+    public Text _highScoreText;
     void Start()
     {
         
     }
     private void Awake()
     {
-        _gameManager = FindObjectOfType<GameManager>();
+        _depenciesManager = FindObjectOfType<DepenciesManager>();
+        _gameManager = _depenciesManager.gameManager;
     }
     public void Refresh(int incomingScore)
     {
         _scoreText.text = incomingScore.ToString();
+    }
+
+    public void RefreshHighScore(int incomingScore)
+    {
+        _highScoreText.text = incomingScore.ToString();
     }
     void Update()
     {
