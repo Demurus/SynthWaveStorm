@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Demurus\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Demurus\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_SynthWaveStorm.-691140964.00" t="ExcludeRecursive" />
+    <e p="E:\Unity\Projects\SynthWaveStorm" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="48 Particle Effect Pack" t="Include">
+          <e p="DemoScense" t="Include" />
+          <e p="Effect" t="Include" />
+          <e p="Script" t="Include">
+            <e p="csDestroyEffect.cs" t="Include" />
+            <e p="csMouseOrbit.cs" t="Include" />
+            <e p="csParticleEffectPackLightControl.cs" t="Include" />
+            <e p="csParticleMove.cs" t="Include" />
+            <e p="csShowAllEffect.cs" t="Include" />
+          </e>
+          <e p="ShurikenEffectEditor" t="Include">
+            <e p="csShurikenEffectChanger.cs" t="Include" />
+            <e p="csShurikenEffectEditor.cs" t="Include" />
+          </e>
+          <e p="Texture" t="Include" />
+        </e>
+        <e p="Animations" t="Include" />
+        <e p="fonts" t="Include" />
+        <e p="FullTiltBoogie" t="Include">
+          <e p="Helpers" t="Include">
+            <e p="readme.txt" t="Include" />
+          </e>
+          <e p="LensFlare" t="Include" />
+          <e p="Materials" t="Include">
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="Prefabs" t="Include" />
+          <e p="RotateFlareHolder.cs" t="Include" />
+          <e p="SCENES" t="Include" />
+        </e>
+        <e p="Materials" t="Include" />
+        <e p="Menus" t="Include">
+          <e p="LevelHUD" t="Include" />
+          <e p="Main Menu" t="Include">
+            <e p="Particles" t="Include" />
+          </e>
+          <e p="Settings Menu" t="Include" />
+          <e p="ShopMenu" t="Include" />
+        </e>
+        <e p="Prefabs" t="Include">
+          <e p="Bricks" t="Include" />
+          <e p="Particles" t="Include" />
+          <e p="PowerUps" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="BillingMode.json" t="Include" />
+        </e>
+        <e p="SCENES" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="__notusable.cs" t="Include" />
+          <e p="_notusable.cs" t="Include" />
+          <e p="ArmoredBrick.cs" t="Include" />
+          <e p="AudioManager.cs" t="Include" />
+          <e p="Ball.cs" t="Include" />
+          <e p="Brick.cs" t="Include" />
+          <e p="Coin.cs" t="Include" />
+          <e p="Coinbar.cs" t="Include" />
+          <e p="DepenciesManager.cs" t="Include" />
+          <e p="DestroyFX.cs" t="Include" />
+          <e p="EventsManagement" t="Include">
+            <e p="EventsManager.cs" t="Include" />
+            <e p="IEventsManager.cs" t="Include" />
+            <e p="IEventsManagerSubscriber.cs" t="Include" />
+          </e>
+          <e p="GameBase" t="Include">
+            <e p="DataSystem" t="Include">
+              <e p="DataManager.cs" t="Include" />
+              <e p="GameData.cs" t="Include" />
+              <e p="IDataManager.cs" t="Include" />
+              <e p="SaveManager.cs" t="Include" />
+            </e>
+            <e p="GameContext.cs" t="Include" />
+            <e p="InitialController.cs" t="Include" />
+            <e p="SceneManagement" t="Include">
+              <e p="ISceneLoaded.cs" t="Include" />
+              <e p="SceneLoader.cs" t="Include" />
+            </e>
+          </e>
+          <e p="GameManager.cs" t="Include" />
+          <e p="GameManagerNonDestroyable.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="IManager.cs" t="Include" />
+          </e>
+          <e p="LivesBar.cs" t="Include" />
+          <e p="LostLevelWindow.cs" t="Include" />
+          <e p="MainMenuWindow.cs" t="Include" />
+          <e p="NonDestroyable.cs" t="Include" />
+          <e p="Paddle.cs" t="Include" />
+          <e p="PauseWindow.cs" t="Include" />
+          <e p="PlayerBehaviour.cs" t="Include" />
+          <e p="PlayerState.cs" t="Include" />
+          <e p="PowerUp.cs" t="Include" />
+          <e p="PowerUpManager.cs" t="Include" />
+          <e p="ProperButton.cs" t="Include" />
+          <e p="ScoreBar.cs" t="Include" />
+          <e p="SettingsWindow.cs" t="Include" />
+          <e p="ShopWindow.cs" t="Include" />
+          <e p="StrongBrick.cs" t="Include" />
+          <e p="TagClass.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
+          <e p="UIControllerInGame.cs" t="Include" />
+          <e p="UIWindow.cs" t="Include" />
+          <e p="WonLevelWindow.cs" t="Include" />
+        </e>
+        <e p="Sounds" t="Include" />
+        <e p="SpaceGUI" t="Include">
+          <e p="anim" t="Include" />
+          <e p="fonts" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+          </e>
+          <e p="img" t="Include" />
+          <e p="PSD Sources" t="Include" />
+        </e>
+        <e p="Sprites" t="Include">
+          <e p="Backgrounds" t="Include" />
+          <e p="Ball" t="Include" />
+          <e p="Bricks" t="Include">
+            <e p="Armor" t="Include" />
+            <e p="Blue" t="Include" />
+            <e p="Purple" t="Include" />
+          </e>
+          <e p="Coins" t="Include" />
+          <e p="Paddle" t="Include">
+            <e p="Common" t="Include" />
+            <e p="Glowing" t="Include" />
+          </e>
+          <e p="PowerUps" t="Include" />
+        </e>
+        <e p="Tazo_fx" t="Include">
+          <e p="_Loop_effect" t="Include" />
+          <e p="Icon" t="Include" />
+          <e p="Materials" t="Include" />
+          <e p="Model" t="Include">
+            <e p="Materials" t="Include" />
+          </e>
+          <e p="Script" t="Include">
+            <e p="BillBoard.cs" t="Include" />
+            <e p="button_target.cs" t="Include" />
+            <e p="demo.cs" t="Include" />
+            <e p="tazo_rotate.cs" t="Include" />
+            <e p="tazo_UVScroller.cs" t="Include" />
+          </e>
+          <e p="Sound" t="Include" />
+          <e p="Textures" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="SynthWaveStorm.sln" t="IncludeFlat" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
