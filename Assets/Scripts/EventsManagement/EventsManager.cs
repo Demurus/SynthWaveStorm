@@ -98,5 +98,10 @@ namespace EventsManagement
             public IEventsManagerSubscriber Subscriber;
             public int Priority;
         }
+
+        public void Init()
+        {
+            
+        }
     }
 }

@@ -1,8 +1,8 @@
 using EventsManagement;
 using GameBase;
 using GameBase.DataSystem;
-using PirateMatch.DataSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace DataSystem
@@ -26,7 +26,7 @@ namespace DataSystem
             
         }
 
-        public void LoadGameData()
+        public void LoadGameData(UnityAction success)
         {
             if (SaveManager.IsFileExist(GAME_DATA_KEY))
             {
@@ -43,6 +43,7 @@ namespace DataSystem
             {
                 Debug.Log($"<color=green> Game data is exist </color>");
             }
+            success?.Invoke();
         }
 
         public void SaveGameData()
@@ -50,7 +51,7 @@ namespace DataSystem
             _gameData.LastSaveVersion = Application.version;
             SaveManager.Save(_gameData, GAME_DATA_KEY);
         }
-        
+
         public void Dispose()
         {
             GameContext.GetInstance<IEventsManager>().UnSubscribe<ISceneLoaded>(this);

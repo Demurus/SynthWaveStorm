@@ -1,4 +1,4 @@
-namespace PirateMatch.DataSystem
+namespace DataSystem
 {
     public class GameData
     {

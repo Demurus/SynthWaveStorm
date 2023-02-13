@@ -1,5 +1,6 @@
 using Interfaces;
-using PirateMatch.DataSystem;
+using DataSystem;
+using UnityEngine.Events;
 
 namespace DataSystem
 {
@@ -14,6 +15,6 @@ namespace DataSystem
 
         void SaveGameData();
 
-        void LoadGameData();
+        void LoadGameData(UnityAction success);
     }
 }

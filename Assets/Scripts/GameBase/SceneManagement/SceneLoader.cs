@@ -1,19 +1,30 @@
 ﻿using EventsManagement;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace GameBase
 {
     public static class SceneLoader
     {
-        public static void Load(Scenes sceneName)
+        public static void Init()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        public static void Dispose()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+        
+        public static void Load(Scenes sceneName)
+        {
+            // SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.LoadScene(sceneName.ToString());
         }
 
         private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            //SceneManager.sceneLoaded -= OnSceneLoaded;
             Scenes parsedName = (Scenes) System.Enum.Parse(typeof(Scenes), scene.name);
             GameContext.GetInstance<IEventsManager>().Fire<ISceneLoaded>(s => s.OnSceneLoaded(parsedName, mode));
         }
@@ -29,7 +40,7 @@ namespace GameBase
     public enum Scenes
     {
         InitScene,
-        MenuScene,
+        GameMenu,
         LevelScene
     }
 }
