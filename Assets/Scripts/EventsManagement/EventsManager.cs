@@ -103,5 +103,10 @@ namespace EventsManagement
         {
             
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,9 +12,10 @@ namespace UI.View
 
         [SerializeField] protected CanvasGroup _internalPanel;
         [SerializeField] protected float _fadeSpeed = 0.5f;
-
+        protected bool _showInProgress;
         private Sequence _fadeInSequence;
         private Sequence _fadeOutSequence;
+        private const int POPUPS_ENUM_START = 100;
 
         public virtual void Init()
         {
@@ -28,18 +29,24 @@ namespace UI.View
         {
             RegisterEvents();
             gameObject.SetActive(true);
-            if (_internalPanel != null)
+            if (IsPopUp(Type) && _internalPanel != null)
             {
+                _showInProgress = true;
                 if (_fadeInSequence == null) _fadeInSequence = DOTween.Sequence();
                 _fadeInSequence.onComplete = OnFadeInComplete;
-                _fadeInSequence.Append(_internalPanel.DOFade(1, _fadeSpeed).From(_internalPanel.alpha));
+                _fadeInSequence.Append(_internalPanel.DOFade(1, _fadeSpeed).From(0));
                 _fadeInSequence.Play();
+            }
+            else
+            {
+                _showInProgress = false;
             }
 
             // GameContext.GetInstance<IEventBus>().Emmit<IViewChanged>(s => s.OnViewOpened(Type));
             void OnFadeInComplete()
             {
                 _fadeInSequence?.Kill(true);
+                _showInProgress = false;
             }
         }
 
@@ -48,7 +55,7 @@ namespace UI.View
         {
             UnregisterEvents();
 
-            if (_internalPanel != null)
+            if (IsPopUp(Type) && _internalPanel != null)
             {
                 if (_fadeOutSequence == null) _fadeOutSequence = DOTween.Sequence();
                 _fadeOutSequence.onComplete = OnFadeOutComplete;
@@ -87,6 +94,11 @@ namespace UI.View
 
         public virtual void UnregisterEvents()
         {
+        }
+        
+        private bool IsPopUp(UIViewType viewType)
+        {
+            return (int) viewType >= POPUPS_ENUM_START;
         }
 
         protected virtual void SwitchAlpha(bool on)

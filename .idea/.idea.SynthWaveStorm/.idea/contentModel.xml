@@ -345,29 +345,6 @@
             </e>
             <e p="readme.txt" t="Include" />
           </e>
-          <e p="ParticleEffectForUGUI-main" t="Include">
-            <e p="package.json" t="Include" />
-            <e p="Scripts" t="Include">
-              <e p="AnimatableProperty.cs" t="Include" />
-              <e p="Coffee.UIParticle.asmdef" t="Include" />
-              <e p="Editor" t="Include">
-                <e p="AnimatedPropertiesEditor.cs" t="Include" />
-                <e p="Coffee.UIParticle.Editor.asmdef" t="Include" />
-                <e p="ImportSampleMenu.cs" t="Include" />
-                <e p="UIParticleEditor.cs" t="Include" />
-                <e p="UIParticleMenu.cs" t="Include" />
-              </e>
-              <e p="ModifiedMaterial.cs" t="Include" />
-              <e p="UIParticle.cs" t="Include" />
-              <e p="UIParticleAttractor.cs" t="Include" />
-              <e p="UIParticleRenderer.cs" t="Include" />
-              <e p="UIParticleUpdater.cs" t="Include" />
-              <e p="Utils.cs" t="Include" />
-            </e>
-            <e p="Shaders" t="Include">
-              <e p="UIAdditive.shader" t="Include" />
-            </e>
-          </e>
           <e p="Sherbbs Particle Collection" t="Include">
             <e p="Materials" t="Include" />
             <e p="Mesh" t="Include" />
@@ -469,6 +446,39 @@
               <e p="EmojiOne.json" t="Include" />
             </e>
           </e>
+          <e p="UIParticleSystem" t="Include">
+            <e p="Changelog.txt" t="Include" />
+            <e p="Example" t="Include">
+              <e p="Materials" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="Autorotate.cs" t="Include" />
+              </e>
+              <e p="Textures" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="UIParticleCanvasEditor.cs" t="Include" />
+                <e p="UIParticleDepthObjectEditor.cs" t="Include" />
+                <e p="UIParticleRectTransSizeFollowerEditor.cs" t="Include" />
+                <e p="UIParticleShaderEditor.cs" t="Include" />
+              </e>
+              <e p="UIParticleCanvas.cs" t="Include" />
+              <e p="UIParticleDepthObject.cs" t="Include" />
+              <e p="UIParticleDepthObjectInfo.cs" t="Include" />
+              <e p="UIParticleEnums.cs" t="Include" />
+              <e p="UIParticleRectTransSizeFollower.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="UIDepthLib.cginc" t="Include" />
+              <e p="UIParticle.shader" t="Include" />
+              <e p="UIParticleMask" t="Include">
+                <e p="UIParticleDepthRender.shader" t="Include" />
+                <e p="UIParticleMaskCullRender.shader" t="Include" />
+              </e>
+              <e p="UIParticleWithDistortion.shader" t="Include" />
+            </e>
+            <e p="UniversalRP(URP)_UpgradeReadme.txt" t="Include" />
+          </e>
         </e>
         <e p="Prefabs" t="Include">
           <e p="Bricks" t="Include" />
@@ -482,6 +492,9 @@
           <e p="BillingMode.json" t="Include" />
         </e>
         <e p="SCENES" t="Include" />
+        <e p="ScriptableObjects" t="Include">
+          <e p="Resources" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="__notusable.cs" t="Include" />
           <e p="_notusable.cs" t="Include" />
@@ -499,6 +512,13 @@
             <e p="IEventsManagerSubscriber.cs" t="Include" />
           </e>
           <e p="GameBase" t="Include">
+            <e p="ConfigsSystem" t="Include">
+              <e p="ConfigsContainer.cs" t="Include" />
+              <e p="ConfigsManager.cs" t="Include" />
+              <e p="ConfigsPath.cs" t="Include" />
+              <e p="IConfig.cs" t="Include" />
+              <e p="IConfigsManager.cs" t="Include" />
+            </e>
             <e p="DataSystem" t="Include">
               <e p="DataManager.cs" t="Include" />
               <e p="GameData.cs" t="Include" />
@@ -525,6 +545,11 @@
           <e p="Interfaces" t="Include">
             <e p="IManager.cs" t="Include" />
           </e>
+          <e p="LevelsManagement" t="Include">
+            <e p="ILevelManager.cs" t="Include" />
+            <e p="LevelManager.cs" t="Include" />
+            <e p="PlayLevelData.cs" t="Include" />
+          </e>
           <e p="LivesBar.cs" t="Include" />
           <e p="LostLevelWindow.cs" t="Include" />
           <e p="MainMenuWindow.cs" t="Include" />
@@ -536,9 +561,56 @@
           <e p="PowerUp.cs" t="Include" />
           <e p="PowerUpManager.cs" t="Include" />
           <e p="ProperButton.cs" t="Include" />
+          <e p="RewardManager" t="Include">
+            <e p="Commands" t="Include">
+              <e p="BoosterCommand.cs" t="Include" />
+              <e p="BoosterCommandData.cs" t="Include" />
+              <e p="CoinsCommand.cs" t="Include" />
+              <e p="CoinsCommandData.cs" t="Include" />
+              <e p="CommandData.cs" t="Include" />
+              <e p="HeartsCommand.cs" t="Include" />
+              <e p="HeartsCommandData.cs" t="Include" />
+              <e p="ICommand.cs" t="Include" />
+            </e>
+            <e p="IRewardManager.cs" t="Include" />
+            <e p="RewardData.cs" t="Include" />
+            <e p="RewardManager.cs" t="Include" />
+            <e p="RewardType.cs" t="Include" />
+          </e>
           <e p="ScoreBar.cs" t="Include" />
           <e p="SettingsWindow.cs" t="Include" />
           <e p="ShopWindow.cs" t="Include" />
+          <e p="SpaceJourney" t="Include">
+            <e p="ChaptersSystem" t="Include">
+              <e p="Configs" t="Include">
+                <e p="ChapterConfig.cs" t="Include" />
+                <e p="ChapterConfigsHolder.cs" t="Include" />
+                <e p="ChapterType.cs" t="Include" />
+                <e p="EndChapterReward.cs" t="Include" />
+                <e p="IChaptersConfigData.cs" t="Include" />
+              </e>
+              <e p="Enums" t="Include">
+                <e p="ChapterState.cs" t="Include" />
+                <e p="ChapterType.cs" t="Include" />
+              </e>
+              <e p="UI" t="Include">
+                <e p="ChaptersView" t="Include">
+                  <e p="ChaptersView.cs" t="Include" />
+                  <e p="ChapterViewItem.cs" t="Include" />
+                </e>
+                <e p="JourneyView" t="Include" />
+              </e>
+            </e>
+            <e p="Management" t="Include">
+              <e p="IJourneyManager.cs" t="Include" />
+              <e p="JourneyManager.cs" t="Include" />
+            </e>
+            <e p="SaveData" t="Include">
+              <e p="ChapterProgress.cs" t="Include" />
+              <e p="JourneySaveData.cs" t="Include" />
+              <e p="LevelProgress.cs" t="Include" />
+            </e>
+          </e>
           <e p="StrongBrick.cs" t="Include" />
           <e p="TagClass.cs" t="Include" />
           <e p="UI" t="Include">
@@ -603,8 +675,6 @@
           <e p="Textures" t="Include" />
         </e>
       </e>
-      <e p="Coffee.UIParticle.csproj" t="IncludeRecursive" />
-      <e p="Coffee.UIParticle.Editor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="SynthWaveStorm.sln" t="IncludeFlat" />

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b356c38e7f95a394f80ee699b952e6e1, type: 3}
+  m_Name: ChapterConfigsHolder
+  m_EditorClassIdentifier: 
+  _chapters:
+  - Type: 1
+    ChapterNumber: 1
+    ChapterName: Cosmic Gate
+    StartLevel: 1
+    EndLevel: 10
+    VisualConfigName: 
+    IsAvailableInGame: 0
+    ChapterPreviewID: 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Data.ConfigsSystem;
 using DataSystem;
 using EventsManagement;
 using Interfaces;
@@ -13,6 +14,7 @@ namespace GameBase
         [SerializeField] private EventsManager _eventsManager;
         [SerializeField] private UIManager _uiManager;
         [SerializeField] private DataManager _dataManager;
+        [SerializeField] private ConfigsManager _configsManager;
         
         private readonly List<IManager> _managersList = new List<IManager>();
          private void Awake()
@@ -35,11 +37,11 @@ namespace GameBase
             RegisterManager<IEventsManager>(_eventsManager);
             RegisterManager<IDataManager>(_dataManager);
             RegisterManager<IUIManager>(_uiManager);
-            
-            
-            _dataManager.LoadGameData(Continue);
-            /*
             RegisterManager<IConfigsManager>(_configsManager);
+            
+            
+            _dataManager.LoadGameData(ContinueToConfigs);
+            /*
             RegisterManager<ISettingsManager>(_settingsManager);
             RegisterManager<ILootTimerManager>(_lootTimerManager);
             RegisterManager<ILootManager>(_lootManager);
@@ -52,20 +54,25 @@ namespace GameBase
             RegisterManager<ITreasureHuntManager>(_treasureHuntManager);
             RegisterManager<IBackgroundAnimationController>(_bgAnimationController);
             RegisterManager<IRewardAnimationManager>(_rewardAnimationManager);
-            
+            */
            
-            _configsManager.InitConfigs(ContinueGameLoading);*/
         }
 
-        private void Continue()
+        private void ContinueToConfigs()
+        {
+            _configsManager.InitConfigs(ContinueToGame);
+        }
+        
+        private void ContinueToGame()
         {
             _managersList.ForEach(manager => manager.Init());
-             SceneLoader.Load(Scenes.GameMenu);
+            SceneLoader.Load(Scenes.GameMenu);
         }
 
         private void OnApplicationQuit()
         {
             SceneLoader.Dispose();
+            _managersList.ForEach(manager => manager.Dispose());
         }
     }
 }
