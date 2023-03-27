@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ChaptersSystem.Configs;
+using ChaptersSystem.Enums;
+using Data.ConfigsSystem;
 using DataSystem;
 using GameBase;
 using LevelsManagement;
@@ -15,7 +18,6 @@ namespace SpaceJourney.SaveData
         
         public JourneySaveData()
         {
-            ChaptersProgress?.Clear();
             ChaptersProgress = new List<ChapterProgress>();
         }
 
@@ -70,26 +72,25 @@ namespace SpaceJourney.SaveData
             }
         }
         
-        /*public void CompleteChapter(int chapterNumber)
+        public void CompleteChapter(int chapterNumber)
         {
-            ChapterProgress foundChapter;
-            if (TryGetChapter(chapterNumber, out foundChapter))
+            if (TryGetChapterProgress(chapterNumber, out ChapterProgress foundChapter))
             {
-                //DebugLog($"Chapter{foundChapter.ChapterNumber} COMPLETED!");
+                DebugLog($"Chapter{foundChapter.ChapterNumber} COMPLETED!");
                 foundChapter.ChapterState = ChapterState.Completed;
-                GameContext.GetInstance<IJourneyManager>().UpdateChaptersState(foundChapter);
                 GameContext.GetInstance<IDataManager>().SaveGameData();
                 ChapterConfig newChapterConfig = GameContext.GetInstance<IConfigsManager>().Configs.ChaptersConfig.GetChapterByNumber(chapterNumber + 1);
                 if (newChapterConfig != null)
                 {
-                    AddNewChapter(newChapterConfig, false);
+                    ChapterProgress newChapter = new ChapterProgress(newChapterConfig.ChapterNumber);
+                    ChaptersProgress.Add(newChapter);
                 }
             }
             else
             {
                 DebugLog($"Can not complete chapter {chapterNumber}. Its not found in progress");
             }
-        }*/
+        }
         
         public ChapterProgress GetCurrentChapter()
         {

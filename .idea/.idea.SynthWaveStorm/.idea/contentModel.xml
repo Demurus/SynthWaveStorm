@@ -345,6 +345,9 @@
             </e>
             <e p="readme.txt" t="Include" />
           </e>
+          <e p="InputSystem" t="Include">
+            <e p="InputControls.cs" t="Include" />
+          </e>
           <e p="Sherbbs Particle Collection" t="Include">
             <e p="Materials" t="Include" />
             <e p="Mesh" t="Include" />
@@ -501,7 +504,6 @@
           <e p="ArmoredBrick.cs" t="Include" />
           <e p="AudioManager.cs" t="Include" />
           <e p="Ball.cs" t="Include" />
-          <e p="Brick.cs" t="Include" />
           <e p="Coin.cs" t="Include" />
           <e p="Coinbar.cs" t="Include" />
           <e p="DepenciesManager.cs" t="Include" />
@@ -527,6 +529,10 @@
             </e>
             <e p="GameContext.cs" t="Include" />
             <e p="InitialController.cs" t="Include" />
+            <e p="InputManagement" t="Include">
+              <e p="IInputManager.cs" t="Include" />
+              <e p="InputManager.cs" t="Include" />
+            </e>
             <e p="LogTextColorExtension" t="Include">
               <e p="ColorType.cs" t="Include" />
               <e p="LogTextColorExtension.cs" t="Include" />
@@ -541,6 +547,26 @@
           <e p="GameMenu" t="Include">
             <e p="HomeView.cs" t="Include" />
             <e p="TitleHomePart.cs" t="Include" />
+          </e>
+          <e p="GamePlay" t="Include">
+            <e p="Bricks" t="Include">
+              <e p="Config" t="Include">
+                <e p="BrickConfig.cs" t="Include" />
+                <e p="BricksConfigHolder.cs" t="Include" />
+                <e p="IBricksConfig.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="BrickType.cs" t="Include" />
+              </e>
+              <e p="GameObjects" t="Include">
+                <e p="BaseBrick.cs" t="Include" />
+                <e p="SimpleBrick.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Levels" t="Include">
+              <e p="LevelMap.cs" t="Include" />
+              <e p="LevelMapper.cs" t="Include" />
+            </e>
           </e>
           <e p="Interfaces" t="Include">
             <e p="IManager.cs" t="Include" />

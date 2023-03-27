@@ -7,7 +7,7 @@
         public bool WinLevel;
         public byte Stars;
         public string Rating;
-        
+
         public PlayLevelData(int chapterNumber, int levelNumber, bool winLevel, byte stars, string rating)
         {
             ChapterNumber = chapterNumber;

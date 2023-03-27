@@ -2,6 +2,7 @@
 using Data.ConfigsSystem;
 using DataSystem;
 using EventsManagement;
+using GameBase.InputManagement;
 using Interfaces;
 using LogTextColorExtension;
 using UI.Management;
@@ -15,6 +16,7 @@ namespace GameBase
         [SerializeField] private UIManager _uiManager;
         [SerializeField] private DataManager _dataManager;
         [SerializeField] private ConfigsManager _configsManager;
+        [SerializeField] private InputManager _inputManager;
         
         private readonly List<IManager> _managersList = new List<IManager>();
          private void Awake()
@@ -38,6 +40,7 @@ namespace GameBase
             RegisterManager<IDataManager>(_dataManager);
             RegisterManager<IUIManager>(_uiManager);
             RegisterManager<IConfigsManager>(_configsManager);
+            RegisterManager<IInputManager>(_inputManager);
             
             
             _dataManager.LoadGameData(ContinueToConfigs);
