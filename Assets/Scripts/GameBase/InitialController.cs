@@ -42,23 +42,8 @@ namespace GameBase
             RegisterManager<IConfigsManager>(_configsManager);
             RegisterManager<IInputManager>(_inputManager);
             
-            
             _dataManager.LoadGameData(ContinueToConfigs);
-            /*
-            RegisterManager<ISettingsManager>(_settingsManager);
-            RegisterManager<ILootTimerManager>(_lootTimerManager);
-            RegisterManager<ILootManager>(_lootManager);
-            RegisterManager<IAnimShower>(_itemShower);
-            RegisterManager<IRewardManager>(_rewardManager);
-            RegisterManager<IHeartsEconomy>(_heartsEconomy);
-            RegisterManager<IJourneyManager>(_journeyManager);
-            RegisterManager<ITutorialManager>(_tutorialsManager);
-            RegisterManager<IMiniGameManager>(_miniGameManager);
-            RegisterManager<ITreasureHuntManager>(_treasureHuntManager);
-            RegisterManager<IBackgroundAnimationController>(_bgAnimationController);
-            RegisterManager<IRewardAnimationManager>(_rewardAnimationManager);
-            */
-           
+
         }
 
         private void ContinueToConfigs()

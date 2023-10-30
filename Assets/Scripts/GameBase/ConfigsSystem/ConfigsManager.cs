@@ -24,14 +24,11 @@
             }
         }
         
-       
-
         public IConfig GetConfigByDefault<T>(string path) where T : UnityEngine.Object
         {
             return Configs.GetConfigByDefault<T>(path);
         }
         
-
         public void InitConfigs(Action onConfigsInitialized)
         {
             _configsContainer = new ConfigsContainer();

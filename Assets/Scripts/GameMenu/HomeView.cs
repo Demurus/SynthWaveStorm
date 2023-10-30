@@ -11,32 +11,20 @@ namespace GameMenu
 {
     public class HomeView : UIView
     {
-        // [SerializeField] private HomeContainer _homeContainer;
         [SerializeField] private List<ViewPart> _parts;
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _shopButton;
         private IEventsManager _eventsManager;
-
         private IDataManager _data;
-
-        // private ISoundManager _soundManager;
         private IUIManager _uiManager;
-        // private IChaptersConfigData _ccd;
-
-        // public HomeScreenBottomBar HomeBar => _bottomPanel;
-
-        //  public HomeContainer HomeContainer => _homeContainer;
 
         public override void Init()
         {
             base.Init();
             _eventsManager = GameContext.GetInstance<IEventsManager>();
             _data = GameContext.GetInstance<IDataManager>();
-            // _soundManager = GameContext.GetInstance<ISoundManager>();
             _uiManager = GameContext.GetInstance<IUIManager>();
-            //  _ccd = GameContext.GetInstance<IConfigsManager>().Configs.ChaptersConfig;
-            // _bottomPanel.Init();
             _parts.ForEach(p => p.Init());
         }
 
@@ -66,7 +54,6 @@ namespace GameMenu
             _shopButton.onClick.AddListener(OnShopButtonClick);
             
             _parts.ForEach(p => p.RegisterEvents());
-            //  _lootManager.OnLootStateUpdated += AnimateStarsIfNeeded;
         }
 
         public override void UnregisterEvents()

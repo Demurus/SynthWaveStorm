@@ -12,8 +12,7 @@ namespace DataSystem
         private GameData _gameData;
 
         public GameData Data { get; }
-
-        // private ConfigsContainer _configs;
+        
         private const string GAME_DATA_KEY = "GameState";
 
         public void Init()

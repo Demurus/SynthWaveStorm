@@ -7,7 +7,7 @@ namespace EventsManagement
 {
     public class EventsManager : MonoBehaviour, IEventsManager
     {
-        private Dictionary<RuntimeTypeHandle, List<PrioritySubscriber>> SubscribersByType = new Dictionary<RuntimeTypeHandle, List<PrioritySubscriber>>();
+        private readonly Dictionary<RuntimeTypeHandle, List<PrioritySubscriber>> SubscribersByType = new Dictionary<RuntimeTypeHandle, List<PrioritySubscriber>>();
 
         public void Fire<T>(Action<T> action) where T : class, IEventsManagerSubscriber
         {
@@ -28,13 +28,6 @@ namespace EventsManagement
                     }
                     action.Invoke(copySubs[i].Subscriber as T);
                 }
-
-                //foreach (PrioritySubscriber prioritySub in copySubs)
-                //{
-                //    action.Invoke(prioritySub.Subscriber as T);
-                //}
-               
-                //Debug.Log(action.ToString());
             }
         }
 
@@ -43,13 +36,12 @@ namespace EventsManagement
             return SubscribersByType.Count;
         }
 
-        public void Subscribe<S>(S subscriber, int prioity = 0) where S : IEventsManagerSubscriber
+        public void Subscribe<TS>(TS subscriber, int prioity = 0) where TS : IEventsManagerSubscriber
         {
-            Type type = typeof(S);
+            Type type = typeof(TS);
             RuntimeTypeHandle handle = type.TypeHandle;
             if (SubscribersByType.ContainsKey(handle))
             {
-                //if (SubscribersByType[handle].Contains(subscriber))
                 if (SubscribersByType[handle].Any(s => s.Subscriber.GetHashCode() == subscriber.GetHashCode()))
                 {
                     Debug.LogWarning($"Object of type->{type.Name} try to subscribe twice");
@@ -61,8 +53,7 @@ namespace EventsManagement
                     Priority = prioity
                 });
                 SubscribersByType[handle] = SubscribersByType[handle].OrderBy(s => s.Priority).ToList();
-
-                //Debug.Log(subscriber.ToString());
+                
             }
             else
             {
@@ -74,8 +65,7 @@ namespace EventsManagement
                         Priority = prioity
                     }
                 });
-
-                //Debug.Log(subscriber.ToString());
+                
             }
         }
 

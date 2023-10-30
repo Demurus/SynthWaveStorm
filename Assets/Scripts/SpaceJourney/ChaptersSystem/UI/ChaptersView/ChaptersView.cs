@@ -1,13 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using ChaptersSystem.Configs;
-using ChaptersSystem.Enums;
-using DataSystem;
-using DG.Tweening;
-using GameBase;
-using SpaceJourney.Management;
-using SpaceJourney.SaveData;
-using UI.Management;
 using UI.View;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,28 +20,16 @@ namespace ChaptersSystem.UI.ChaptersView
 
         private List<ChapterViewItem> _chaptersList;
         private ChapterViewItem _currentChapter;
-        private IJourneyManager _journeyManager;
         private const float CENTERING_ANIMATION_DURATION = 1.2f;
         private const float CENTERING_ANIMATION_DELAY = 0.6f;
 
         public override void Init()
         {
             base.Init();
-            _journeyManager = GameContext.GetInstance<IJourneyManager>();
         }
 
         public override void Show()
         {
-            /*if (_winLevelsButton != null)
-                _winLevelsButton.gameObject.SetActive(Debug.isDebugBuild);
-
-            FillChapters();
-            base.Show(specialInstruction);
-            ChaptersViewInstruction instruction = (ChaptersViewInstruction)specialInstruction;
-            if (instruction == ChaptersViewInstruction.NewChapterUnlocked)
-                GameContext.GetInstance<IEventBus>().Emmit<INewChapterUnlocked>(s => s.OnNewChapterUnlocked());
-            HighLightActiveChapter(specialInstruction > 0);
-            GameContext.GetInstance<IUIManager>().CloseView(UIViewType.Settings);*/
         }
 
         public override void Hide()
@@ -58,26 +38,7 @@ namespace ChaptersSystem.UI.ChaptersView
             HideChaptersList();
             gameObject.SetActive(false);
         }
-
-        private void FillChapters()
-        {
-            /*HideChaptersList();
-
-            int count;
-            List<ChapterConfig> chapters = _journeyManager.ChaptersConfig.Chapters;
-            for (count = 0; count < chapters.Count; count++)
-            {
-                if (_chaptersList.ElementAtOrDefault(count) == null)
-                {
-                    InstantiateChapter(chapters[count]);
-                }
-                else
-                {
-                    _chaptersList[count].gameObject.SetActive(true);
-                    _chaptersList[count].Init(chapters[count]);
-                }
-            }*/
-        }
+        
 
         private void InstantiateChapter(ChapterConfig config)
         {
@@ -90,29 +51,7 @@ namespace ChaptersSystem.UI.ChaptersView
 
         private void HighLightActiveChapter(bool animateChapterUnlock)
         {
-            /*JourneySaveData data = GameContext.GetInstance<IDataManager>().GetGameData().JourneySaveData;
-            ChapterProgress currentChapterProgress = data.ChaptersProgress.LastOrDefault(chapter => chapter.ChapterState == ChapterState.Active);
-            if (currentChapterProgress == null) return;
-            ChapterConfig currentChapterConfig = _journeyManager.ChaptersConfig.GetChapterByNumber(currentChapterProgress.ChapterNumber);
-            _currentChapter = _chaptersList.FirstOrDefault(chapter => chapter.Config.ChapterNumber == currentChapterConfig.ChapterNumber);
-            if (data.LastWonLevel < currentChapterConfig.StartLevel && animateChapterUnlock)
-            {
-                _currentChapter.SwitchLockedChapter(true);
-                ChapterViewItem previousItem = _chaptersList.FirstOrDefault(chapter => chapter.Config.ChapterNumber == currentChapterConfig.ChapterNumber - 1);
-                if (previousItem != null) _scroll.normalizedPosition = FindCenteredPosition(previousItem.GetComponent<RectTransform>());
-                Sequence centeringAnimation = DOTween.Sequence();
-                centeringAnimation.onComplete = OnAnimationComplete;
-                centeringAnimation.AppendInterval(CENTERING_ANIMATION_DELAY);
-                centeringAnimation.Append(_scroll.DONormalizedPos(FindCenteredPosition(_currentChapter.GetComponent<RectTransform>()), CENTERING_ANIMATION_DURATION));
-
-                void OnAnimationComplete()
-                {
-                    centeringAnimation?.Kill(true);
-                    _currentChapter.SwitchLockedChapter(false);
-                }
-            }
-            else
-                _scroll.normalizedPosition = FindCenteredPosition(_currentChapter.GetComponent<RectTransform>());*/
+           
         }
 
         private Vector2 FindCenteredPosition(RectTransform element)
@@ -188,15 +127,7 @@ namespace ChaptersSystem.UI.ChaptersView
         /// </summary>
         private void OnWinLevelsClick()
         {
-            /*IDataManager dataManager = GameContext.GetInstance<IDataManager>();
-            int currentLevel = dataManager.GetGameData().CurrentLevel;
-            int nextLevel = currentLevel + 1;
-            GameContext.GetInstance<IEventBus>().Emmit<ILevelEnd>(s => s.OnLevelEnd(true));
-            //if (currentLevel > _journeyManager.JourneySaves.LastWonLevel) nextLevel = currentLevel;
-            // else nextLevel = currentLevel + 1;
-            dataManager.GetGameData().SetLevel(nextLevel);
-            dataManager.SaveGameData();
-            FillChapters();*/
+         
         }
 
         #endregion

@@ -191,15 +191,6 @@ namespace UI.Management
             return result as T;
         }
 
-        /*public T GetHomeObject<T>() where T : HomeObject
-        {
-            HomeView homeView = GetOpenedView<HomeView>();
-            if (homeView == null) return null;
-
-            HomeObject result = homeView.HomeContainer.GetHomeObject<T>();
-            return (T) result;
-        }*/
-
         private void DisableOpenedView()
         {
             if (_currentView != null && _currentView.gameObject.activeInHierarchy)
